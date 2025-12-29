@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #00695c;
+  --secondary: #004d40;
+  --accent: #00bfa5;
+  --light: #f8faf9;
+  --dark: #2c3e50;
+  --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+header p {
+  margin-top: 1rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.social-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary);
+  color: #fff;
+  gap: 2rem;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.social-contact a {
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.social-contact a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.banner {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/banner-image.jpg') center/cover no-repeat;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+  font-size: 2.8rem;
+  font-weight: 700;
+  animation: fadeIn 1.5s ease-out;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+  background: var(--secondary);
+  text-align: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  backdrop-filter: blur(8px);
+}
+
+nav a {
+  color: #fff;
+  margin: 0 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+section {
+  max-width: 1000px;
+  margin: 4rem auto;
+  background: #fff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  color: var(--primary);
+  margin-top: 0;
+  border-left: 6px solid var(--accent);
+  padding-left: 1.2rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+section p {
+  line-height: 1.9;
+  font-size: 1.1rem;
+  color: #4a5568;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 2.5rem;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 5rem;
+  font-size: 1rem;
+  border-top: 4px solid var(--accent);
+}
+
+@media (max-width: 768px) {
+  header { padding: 3rem 1rem 2rem; }
+  header h1 { font-size: 2.2rem; }
+  header p { font-size: 1rem; }
+  .banner { height: 320px; font-size: 1.8rem; }
+  nav { padding: 0.6rem; }
+  nav a { margin: 0 0.5rem; font-size: 0.85rem; display: inline-block; padding: 0.5rem 0; }
+  section { padding: 2.5rem 1.5rem; margin: 2rem 1rem; }
+  section h2 { font-size: 1.6rem; }
+  section p { font-size: 1rem; }
+  .gallery { grid-template-columns: 1fr 1fr; gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .gallery { grid-template-columns: 1fr; }
+  .social-contact { flex-direction: column; gap: 0.5rem; }
+}
