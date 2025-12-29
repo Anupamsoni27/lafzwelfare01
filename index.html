@@ -1,130 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agariya Higher Secondary School</title>
-
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-
-    header {
-      background: #004aad;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav {
-      background: #002f6c;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* HERO with your image */
-    .hero {
-      height: 320px;
-      background-image: url('/mnt/data/unnamed.jpg');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-    }
-
-    .hero h1 {
-      font-size: 2rem;
-      background: rgba(0,0,0,0.5);
-      padding: 10px 20px;
-      border-radius: 8px;
-    }
-
-    section {
-      padding: 30px;
-      max-width: 950px;
-      margin: auto;
-      background: #fff;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
-
-    .card {
-      background: #f2f7ff;
-      padding: 15px;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      background: #002f6c;
-      color: #fff;
-      padding: 10px;
-      margin-top: 30px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>लफ्ज़ वेलफेयर फाउंडेशन</title>
+<style>
+  :root {
+    --primary: #00695c;
+    --secondary: #004d40;
+    --accent: #00bfa5;
+    --light: #f5f5f5;
+    --dark: #333;
+  }
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+  }
+  header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  header p {
+    margin-top: 0.5rem;
+    font-weight: 300;
+  }
+  .social-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #004d40;
+    color: #fff;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+  .social-contact a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .social-contact a:hover {
+    color: var(--accent);
+  }
+  .banner {
+    background: url('banner-image.jpg') center/cover no-repeat;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    font-size: 2rem;
+    font-weight: 700;
+    animation: fadeIn 2s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  nav {
+    background: var(--secondary);
+    text-align: center;
+    padding: 0.7rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    color: #fff;
+    margin: 0 0.7rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: var(--accent);
+  }
+  section {
+    max-width: 1100px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  section h2 {
+    color: var(--primary);
+    margin-top: 0;
+    border-left: 4px solid var(--accent);
+    padding-left: 0.5rem;
+  }
+  section p {
+    line-height: 1.7;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 1rem;
+  }
+  .gallery img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  footer {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+</style>
 </head>
-
 <body>
+  <header>
+    <h1>लफ्ज़ वेलफेयर फाउंडेशन</h1>
+    <p>सिहोरा क्षेत्र में शिक्षा, स्वास्थ्य, सुरक्षा, जागरूकता और पर्यावरण के लिए समर्पित</p>
+  </header>
 
-<header>
-  <h1>Agariya Higher Secondary School</h1>
-  <p>Classes 1st to 12th | Total Students: 700–800</p>
-</header>
+  <div class="social-contact">
+    <span>📞 संपर्क: <a href="tel:+919876543210">+91 98765 43210</a></span>
+    <span>🌐 सोशल: 
+      <a href="https://facebook.com/lafzfoundation" target="_blank">Facebook</a> | 
+      <a href="https://instagram.com/lafzfoundation" target="_blank">Instagram</a> | 
+      <a href="https://twitter.com/lafzfoundation" target="_blank">Twitter</a> | 
+      <a href="https://wa.me/919876543210" target="_blank">WhatsApp</a>
+    </span>
+  </div>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#academics">Academics</a>
-  <a href="#streams">Streams</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <div class="banner">हमारी प्रेरणा, आपकी सेवा</div>
 
-<!-- HERO SECTION WITH IMAGE -->
-<div class="hero">
-  <h1>Welcome to Agariya Higher Secondary School</h1>
-</div>
+  <nav>
+    <a href="#education">शिक्षा</a>
+    <a href="#health">स्वास्थ्य</a>
+    <a href="#security">सुरक्षा</a>
+    <a href="#awareness">जागरूकता</a>
+    <a href="#environment">पर्यावरण</a>
+    <a href="#gallery">गैलरी</a>
+  </nav>
 
-<!-- ABOUT SECTION -->
-<section id="about">
-  <h2>About Our School</h2>
-  <p>
-    Agariya Higher Secondary School provides education from Class 1st to 12th 
-    with a strong emphasis on character, discipline, and academic excellence.
-  </p>
-  <ul>
-    <li>Classes: 1st to 12th</li>
-    <li>Students: 700–800</li>
-    <li>Experienced Teachers</li>
-    <li>Higher Secondary with Maths, Biology & Arts Streams</li>
-  </ul>
-</section>
+  <section>
+    <p>लफ्ज़ वेलफेयर फाउंडेशन 2011 से सिहोरा क्षेत्र में भिन्न पहल और प्रयासों पर लगातार कार्य कर रहा है। लफ्ज़ वेलफेयर सभी प्रकार से लोगों और प्रशासन की, NGO के माध्यम से, सहयोग प्रदान करता है। हमारा मुख्य उद्देश्य लोगों को जागरूक और जिम्मेदार नागरिक बनाना है।</p>
+  </section>
 
-<!-- ACADEMICS -->
-<section id="academics">
-  <h2>Academic Structure</h2>
+  <section id="education">
+    <h2>शिक्षा</h2>
+    <p>लफ्ज़ वेलफेयर द्वारा सिहोरा में डिजिटल लाइब्रेरी की स्थापना, "उड़ान" विज्ञान प्रश्नोत्तरी जैसे कई कार्यक्रम आयोजित किए गए। इनमें 1200 से अधिक छात्रों ने भाग लिया और जबलपुर के ज्वाइंट डायरेक्टर परमेश जलोटे जी ने मुख्य अतिथि के रूप में भाग लिया।</p>
+  </section>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Primary School</h3>
-      <p>Classes 1st to 5th – Basics & Fundamentals</p>
+  <section id="health">
+    <h2>स्वास्थ्य</h2>
+    <p>रक्तदान शिविर, शासकीय हॉस्पिटल में सेवाएं दिलाने और 2 अक्टूबर 2020 को संकल्प उपवास जन आंदोलन जैसे प्रयासों द्वारा स्वास्थ्य क्षेत्र में योगदान दिया गया।</p>
+  </section>
+
+  <section id="security">
+    <h2>सुरक्षा</h2>
+    <p>ट्रैफिक नियमों की जागरूकता, सीसीटीवी, चेक पोस्ट जैसी व्यवस्थाओं के लिए प्रशासन से सहयोग में लफ्ज़ वेलफेयर अग्रणी भूमिका निभा रहा है।</p>
+  </section>
+
+  <section id="awareness">
+    <h2>जागरूकता</h2>
+    <p>स्वच्छता मिशन, मैराथन, प्रतियोगिताएं और अन्य कार्यक्रमों द्वारा लोगों को नैतिक और संवैधानिक नियमों के पालन के लिए प्रेरित किया जाता है।</p>
+  </section>
+
+  <section id="environment">
+    <h2>पर्यावरण</h2>
+    <p>वृक्षारोपण, पशु-पक्षियों के लिए जल की व्यवस्था, जल संरक्षण पर प्रशासन और लोगों के साथ मिलकर कार्य करने के लिए लफ्ज़ वेलफेयर तत्पर है।</p>
+  </section>
+
+  <section id="gallery">
+    <h2>गैलरी</h2>
+    <div class="gallery">
+      <img src="gallery1.jpg" alt="कार्यक्रम 1" />
+      <img src="gallery2.jpg" alt="कार्यक्रम 2" />
+      <img src="gallery3.jpg" alt="कार्यक्रम 3" />
+      <img src="gallery4.jpg" alt="कार्यक्रम 4" />
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Middle School</h3>
-      <p>C
+  <footer>
+    &copy; 2025 लफ्ज़ वेलफेयर फाउंडेशन | सभी अधिकार सुरक्षित
+  </footer>
+</body>
+</html>
